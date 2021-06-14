@@ -12,11 +12,11 @@
     </style>
 </head>
 <body>
-    <button id="button" type="button">Click to see my Education</button>
+    <button id="button" button="type">Click to see my Education</button>
     <script>
     (function () {
         var httpRequest;
-        document.getElementById("button").onclick = function() { makeRequest('my_college_degrees.json');
+        document.getElementById("button").onclick = function() { makeRequest('data.js');
         };
         function makeRequest(url) {
             httpRequest = new XMLHttpRequest();
@@ -37,7 +37,7 @@
                     }
                 }
             }
-        })();
+        }();
         </script>
     </body>
     </html>
