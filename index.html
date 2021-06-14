@@ -13,11 +13,23 @@
 </head>
 <body>
     <button id="button" button="type">Click to see my Education</button>
-    <script src= "js/data.js"></script>
+    <script>
+        id="my_degrees"
+        var college_degrees = [{
+    "id": 1,
+     "school": "California State of Fullerton",
+    "degree": "Bachelor's of Art",
+    "year": 2017,
+},{
+     "id": 2,
+    "school": "Boston University",
+    "degree": "Master's Degree",
+    "year": 2022,
+}];
     <script>
     (function () {
         var httpRequest;
-        document.getElementById("button").onclick = function() { makeRequest('my_college_degrees.json');
+        document.getElementById("button").onclick = function() { makeRequest('my_degrees');
         };
         function makeRequest(url) {
             httpRequest = new XMLHttpRequest();
