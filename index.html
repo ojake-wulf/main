@@ -12,10 +12,11 @@
     </style>
 </head>
 <body>
+    <button id="button">Click to see my Education</button>
     <script>
     (function () {
         var httpRequest;
-        document.getElementById("button").onclick = function() { makeRequest('my_college_degrees.json');
+        document.getElementById("button").onclick = function() { makeRequest('college_degrees.json');
         };
         function makeRequest(url) {
             httpRequest = new XMLHttpRequest();
@@ -24,19 +25,18 @@
                 return false;
             }
             httpRequest.onreadystatechange = alertContents;
-            httpRequest.open('Get', url);
+            httpRequest.open('GET', url);
             httpRequest.send();
         }
         function alertContents() {
             if (httpRequest.readyState === XMLHttpRequest.DONE) {
-                if (httpRequest.status === 2000) {
+                if (httpRequest.status === 200) {
                     document.write(httpRequest.responseText);
                     else {
                         alert('There was a problem with the request.');
                     }
                 }
-            }
-        }();
+            }}();
         </script>
     </body>
     </html>
